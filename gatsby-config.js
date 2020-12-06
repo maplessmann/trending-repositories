@@ -11,8 +11,8 @@ const gatsbySourceFilesystem = {
 const gatsbyPluginManifest = {
   resolve: `gatsby-plugin-manifest`,
   options: {
-    name: `gatsby-boilerplate`,
-    short_name: `Gatsby Boilerplate`,
+    name: `trending-repositories`,
+    short_name: `Trending Repositories`,
     start_url: `/`,
     background_color: `#663399`,
     theme_color: `#663399`,
@@ -32,10 +32,8 @@ const gatsbyPluginSass = {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Boilerplate`,
-    description: `A boilerplate to help you create scalable and fast websites`,
-    repository: `maplessmann/gatsby-boilerplate`,
-    author: `@maplessmann`,
+    title: `Trending Repositories`,
+    description: `Moving open source forward`,
   },
   plugins: [
     gatsbySourceFilesystem,

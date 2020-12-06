@@ -1,6 +1,4 @@
 import { useStaticQuery, graphql } from 'gatsby'
-import Link from 'components/Link'
-import GithubIcon from './GithubIcon'
 import './index.scss'
 
 const Header = () => {
@@ -9,7 +7,6 @@ const Header = () => {
       site {
         siteMetadata {
           title
-          repository
         }
       }
     }
@@ -18,14 +15,7 @@ const Header = () => {
   return (
     <header className="app-header">
       <div className="container">
-        <h1 className="title">⚛️ {data.site.siteMetadata.title}</h1>
-        <Link
-          external
-          to={`https://github.com/${data.site.siteMetadata.repository}`}
-          aria-label="Github repository link"
-        >
-          <GithubIcon />
-        </Link>
+        <h1 className="title">{data.site.siteMetadata.title}</h1>
       </div>
     </header>
   )
