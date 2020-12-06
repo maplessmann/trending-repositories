@@ -1,0 +1,11 @@
+.layout {
+  > .home-page {
+    @extend .container;
+    padding-top: 3rem;
+    text-align: center;
+
+    @include above(m) {
+      padding-top: 28vh;
+    }
+  }
+}
