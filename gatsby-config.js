@@ -1,4 +1,6 @@
-const path = require('path')
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 const gatsbySourceFilesystem = {
   resolve: `gatsby-source-filesystem`,
@@ -30,6 +32,18 @@ const gatsbyPluginSass = {
   },
 }
 
+const gatsbySourceGraphql = {
+  resolve: `gatsby-source-graphql`,
+  options: {
+    typeName: `GitHub`,
+    fieldName: `github`,
+    url: `https://api.github.com/graphql`,
+    headers: {
+      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    },
+  },
+}
+
 module.exports = {
   siteMetadata: {
     title: `Trending Repositories`,
@@ -37,6 +51,7 @@ module.exports = {
   },
   plugins: [
     gatsbySourceFilesystem,
+    gatsbySourceGraphql,
     gatsbyPluginManifest,
     gatsbyPluginSass,
     `gatsby-plugin-react-helmet`,
