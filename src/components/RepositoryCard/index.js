@@ -1,15 +1,21 @@
 import Link from 'components/Link'
 import Html from 'components/Html'
+import StarIcon from './StarIcon'
+
+import './RepositoryCard.scss'
 
 const RepositoryCard = ({ name, url, descriptionHTML, stargazers }) => {
   return (
-    <div className="repository-card">
-      <Link href={url} external>
-        <h2>{name}</h2>
-      </Link>
-      <Html>{descriptionHTML}</Html>
-      <small>{stargazers.totalCount} stars</small>
-    </div>
+    <Link className="repository-card" href={url} external>
+      <h2 className="name">{name}</h2>
+      <Html className="description">{descriptionHTML}</Html>
+      <div className="stats">
+        <small className="stars">
+          <StarIcon />
+          {stargazers.totalCount}
+        </small>
+      </div>
+    </Link>
   )
 }
 
