@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="app-header">
       <div className="container">
-        <h1 className="title">{data.site.siteMetadata.title}</h1>
+        <h1 className="title">⬆ {data.site.siteMetadata.title}</h1>
       </div>
     </header>
   )

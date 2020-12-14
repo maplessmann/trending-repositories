@@ -46,7 +46,7 @@ const gatsbySourceGraphql = {
 
 module.exports = {
   siteMetadata: {
-    title: `⬆ Trending Repositories`,
+    title: `Trending Repositories`,
     description: `Moving open source forward`,
   },
   plugins: [
