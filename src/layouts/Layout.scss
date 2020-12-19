@@ -1,11 +1,9 @@
 .layout {
-  > .home-page {
-    @extend .container;
-    padding-top: 1.6rem;
-    padding-bottom: 5rem;
+  @extend .container;
+  padding-top: 1.6rem;
+  padding-bottom: 5rem;
 
-    @include above(m) {
-      padding-top: 2.4rem;
-    }
+  @include above(m) {
+    padding-top: 2.4rem;
   }
 }
