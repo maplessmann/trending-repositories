@@ -10,15 +10,9 @@ const useTrendingRepos = () => {
               ... on GitHub_Repository {
                 id
                 name
-                owner {
-                  login
-                }
                 url
                 descriptionHTML
                 stargazers {
-                  totalCount
-                }
-                forks {
                   totalCount
                 }
               }
