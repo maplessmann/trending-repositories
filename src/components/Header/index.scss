@@ -8,22 +8,18 @@
     justify-content: space-between;
     align-items: center;
 
-    > .title {
+    .title {
       margin: 0;
       font-size: 1.2rem;
-      color: #fff;
 
       @include above(m) {
         font-size: 1.5rem;
       }
     }
 
-    > .link {
-      > .github-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        fill: #fff;
-      }
+    .link {
+      color: #fff;
+      text-decoration: none;
     }
   }
 }
