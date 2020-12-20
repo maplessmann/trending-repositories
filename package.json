@@ -6,8 +6,6 @@
   "author": "Matheus Plessmann",
   "dependencies": {
     "concurrently": "^5.3.0",
-    "express": "^4.17.1",
-    "express-graphql": "^0.12.0",
     "gatsby": "^2.29.1",
     "gatsby-image": "^2.4.9",
     "gatsby-plugin-layout": "^1.5.0",
@@ -19,14 +17,12 @@
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-source-graphql": "^2.11.0",
     "gatsby-transformer-sharp": "^2.5.7",
-    "graphql": "^14.7.0",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -35,10 +31,9 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "server": "node api/server.js",
-    "server:start": "nodemon api/server.js",
-    "start": "concurrently \"yarn server\" \"gatsby develop\"",
-    "build": "concurrently \"yarn server\" \"gatsby build\"",
+    "start:api": "npm start --prefix api",
+    "start": "concurrently \"yarn start:api\" \"gatsby develop\"",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
