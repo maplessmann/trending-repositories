@@ -1,30 +1,26 @@
 import { useStaticQuery, graphql } from 'gatsby'
+import { useQuery, gql } from '@apollo/client'
+
+const REPOSITORIES_QUERY = gql`
+  query getRepositories {
+    repositories {
+      id
+      name
+      description
+      url
+      stars
+    }
+  }
+`
 
 const useTrendingRepos = () => {
-  const data = useStaticQuery(graphql`
-    query MyQuery($query: String = "language:JavaScript stars:>10") {
-      github {
-        search(query: $query, type: REPOSITORY, first: 10) {
-          repos: edges {
-            repo: node {
-              ... on GitHub_Repository {
-                id
-                name
-                url
-                descriptionHTML
-                stargazers {
-                  totalCount
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  const {data, loading, error} = useQuery(REPOSITORIES_QUERY)
+
+  console.log({ data: data?.repositories })
 
   return {
-    repositories: data?.github?.search?.repos.map(({ repo }) => repo),
+    repositories: data?.repositories,
+    loading,
   }
 }
 

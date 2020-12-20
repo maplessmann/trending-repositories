@@ -2,7 +2,9 @@ import useTrendingRepos from 'hooks/useTrendingRepos'
 import RepositoryCard from 'components/RepositoryCard'
 
 const TrendingRepos = () => {
-  const { repositories } = useTrendingRepos()
+  const { repositories, loading } = useTrendingRepos()
+
+  if (loading) return <p>Loading...</p>
 
   return (
     <div className="trending-repos">
