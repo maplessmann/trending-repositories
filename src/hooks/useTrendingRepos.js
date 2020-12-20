@@ -14,12 +14,23 @@ const REPOSITORIES_QUERY = gql`
 `
 
 const useTrendingRepos = () => {
-  const {data, loading, error} = useQuery(REPOSITORIES_QUERY)
-
-  console.log({ data: data?.repositories })
+  const { data, loading, error } = useQuery(REPOSITORIES_QUERY)
+  const sourceData = useStaticQuery(graphql`
+    {
+      trendingRepositories {
+        repositories {
+          id
+          name
+          description
+          stars
+        }
+      }
+    }
+  `)
 
   return {
-    repositories: data?.repositories,
+    repositories:
+      data?.repositories || sourceData.trendingRepositories.repositories,
     loading,
   }
 }

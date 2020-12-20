@@ -33,12 +33,9 @@ const gatsbyPluginSass = {
 const gatsbySourceGraphql = {
   resolve: `gatsby-source-graphql`,
   options: {
-    typeName: `GitHub`,
-    fieldName: `github`,
-    url: `https://api.github.com/graphql`,
-    headers: {
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    },
+    typeName: `Repository`,
+    fieldName: `trendingRepositories`,
+    url: `http://localhost:4000/graphql`,
   },
 }
 
