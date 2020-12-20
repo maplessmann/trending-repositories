@@ -4,11 +4,11 @@ import './Layout.scss'
 
 const Layout = ({ children }) => {
   return (
-    <main className="layout">
+    <div className="app">
       <SEO />
       <Header />
-      {children}
-    </main>
+      <main className="layout">{children}</main>
+    </div>
   )
 }
 
