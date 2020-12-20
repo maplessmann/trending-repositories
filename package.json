@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Matheus Plessmann",
   "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
     "gatsby": "^2.28.0",
     "gatsby-image": "^2.4.9",
     "gatsby-plugin-layout": "^1.5.0",
@@ -16,12 +18,14 @@
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-source-graphql": "^2.10.0",
     "gatsby-transformer-sharp": "^2.5.7",
+    "graphql": "^15.4.0",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "nodemon": "^2.0.6",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -34,6 +38,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "server": "node api/server.js",
+    "server:start": "nodemon api/server.js",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "repository": {
